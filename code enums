@@ -1,0 +1,30 @@
+/chp 24 Enum Classes
+// to define set of constants,have properties,classes, can't be abstract,open,sealed
+
+enum class Direction(private val degrees: Int) {
+    North(0),
+    South(180),
+    West(360),
+    East(90);
+
+    fun description():String{
+        //"direction is $name and degrees are $degrees"
+        return "direction is $name and degrees are $degrees degrees"
+    }
+}
+
+fun main(args: Array<String>) {
+ val direction = Direction.East
+    println(direction.description())
+
+    println(direction.name)
+    println(direction.ordinal)
+
+    for (dir in Direction.entries) {
+        println(dir)
+    }
+    for (dir in Direction.values()) {
+        println(dir)
+    }
+
+}
